@@ -172,7 +172,7 @@ var JsAnimate = (function(){
         //指数衰减的反弹缓动
         Bounce: {
             easeIn: function(t,b,c,d){
-                return c - Tween.Bounce.easeOut(d-t, 0, c, d) + b;
+                return c - tween.Bounce.easeOut(d-t, 0, c, d) + b;
             },
             easeOut: function(t,b,c,d){
                 if ((t/=d) < (1/2.75)) {
@@ -186,8 +186,8 @@ var JsAnimate = (function(){
                 }
             },
             easeInOut: function(t,b,c,d){
-                if (t < d/2) return Tween.Bounce.easeIn(t*2, 0, c, d) * .5 + b;
-                else return Tween.Bounce.easeOut(t*2-d, 0, c, d) * .5 + c*.5 + b;
+                if (t < d/2) return tween.Bounce.easeIn(t*2, 0, c, d) * .5 + b;
+                else return tween.Bounce.easeOut(t*2-d, 0, c, d) * .5 + c*.5 + b;
             }
         }
     };

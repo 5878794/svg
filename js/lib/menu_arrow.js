@@ -72,9 +72,9 @@ svg.menu_arrow = function(opt){
 			animate = new JsAnimate({
 				start:0,                  //@param:number   初始位置
 				end:1,                    //@param:number   结束位置
-				time:600,                 //@param:number   动画执行时间  ms
-				type:"Cubic",             //@param:str      tween动画类别,默认：Linear 详见函数内tween函数
-				class:"easeIn",           //@param:str      tween动画方式,默认：easeIn 详见函数内tween函数
+				time:700,                 //@param:number   动画执行时间  ms
+				type:"Back",             //@param:str      tween动画类别,默认：Linear 详见函数内tween函数
+				class:"easeInOut",           //@param:str      tween动画方式,默认：easeIn 详见函数内tween函数
 				stepFn:function(val){     //@param:fn       每步执行函数,返回当前属性值
 					var v1 = 10 - (10-4)*val,
 						v2 = -23 * val;
