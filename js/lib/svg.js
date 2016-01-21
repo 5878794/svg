@@ -2,6 +2,31 @@
  * Created by bens on 16-1-15.
  */
 
+//svg生成库
+
+//生成svg的容器svg元素
+//a = new svg({
+//	container:opt.container,    //@param：jqobj 要插入的容器对象
+//	id:opt.id || "",			//@param：string  svg容器的id
+//	viewBoxWidth:"18",			//@param：string  svg容器的viewbox大小
+//	viewBoxHeight:"18"
+//});
+//生成具体的svg元素
+//a.createElement({
+//	tag:"path",					//@param:string  要插入的标签名
+//	val:"123",					//@param:string  标签的值
+//	attr:{						//@param：json    要插入的标签的属性
+//		d:"M 4 6  H 14  C 18 6  18 0  9 6  C 5 8  3 10  4 9",
+//		fill:"none",
+//		stroke:"#000",
+//		"stroke-width":"1",
+//		"stroke-linecap": "round",
+//		"stroke-dasharray":"10 30",
+//		"stroke-dashoffset":"0",
+//		id:"l1"
+//	}
+//});
+
 
 var svg = function(opt){
 	//容器
