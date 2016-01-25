@@ -20,14 +20,15 @@ $(document).ready(function(){
 			message = $(this).attr("message"),
 			yl = $(this).attr("yl") || "";
 
+
 		if(id){
 			if(id == "device" || id == "jq_plus" ){
 
 			}else{
-				$("body").append('<label><input id="__'+id+'__" yl="'+yl+'" type="checkbox" value="'+id+'" name="box"><div style="width:50px; height: 50px;display:inline-block;" onclick="return false;" id="'+id+'_test"></div><span>'+id + '</span><span style="color:#999; padding-left: 20px;">('+message+')</span>'+'</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="__look__" _id="'+id+'" style="color:red;cursor:pointer;">查看</a><br/>');
+				var size = $(this).attr("showSize").split(",");
+				$("body").append('<label><input id="__'+id+'__" yl="'+yl+'" type="checkbox" value="'+id+'" name="box"><div style="width:'+size[0]+'px; height: '+size[1]+'px;display:inline-block;" onclick="return false;" id="'+id+'_test"></div><span>'+id + '</span><span style="color:#999; padding-left: 20px;">('+message+')</span>'+'</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="__look__" _id="'+id+'" style="color:red;cursor:pointer;">查看</a><br/>');
 				window[id+"_test"](id+"_test");
 			}
-
 		}
 	});
 
