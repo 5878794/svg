@@ -11,6 +11,7 @@
 //svg.createStickEffectClass(class_name)
 
 
+
 (function(){
 
 	var stickEffect = function(className){
@@ -20,6 +21,9 @@
 
 		var createDiv = function(){
 			div = $("<div></div>");
+			div.css({
+				width:0,height:0
+			});
 			$("body").append(div);
 		};
 

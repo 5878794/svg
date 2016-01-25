@@ -5,12 +5,12 @@
 
 
 //生成菜单按钮到返回按钮的动画
-var menu_arrow_test = function(div_id){
-	svg.menu_arrow({
-		//id:"",					//@param:str    	svg容器的id
-		container:$("#"+div_id)		//@param:jqobj  	要插入的容器dom
-	})
-};
+//var menu_arrow_test = function(div_id){
+//	svg.menu_arrow({
+//		//id:"",					//@param:str    	svg容器的id
+//		container:$("#"+div_id)		//@param:jqobj  	要插入的容器dom
+//	})
+//};
 
 
 
