@@ -32,10 +32,12 @@ var svg = function(opt){
 	//容器
 	this.body = opt.container;
 	this.id = opt.id || "";
-	this.viewBoxWidth = opt.viewBoxWidth;
-	this.viewBoxHeight = opt.viewBoxHeight;
+	this.isHide = (opt.isHide === true);
+
 	this.bodyWidth = parseInt(this.body.width());
 	this.bodyHeight = parseInt(this.body.height());
+	this.viewBoxWidth = opt.viewBoxWidth || this.bodyWidth;
+	this.viewBoxHeight = opt.viewBoxHeight || this.bodyHeight;
 
 	//svg元素宽高
 	this.width = this.bodyWidth;
@@ -62,14 +64,24 @@ svg.prototype = {
 	},
 	createBody:function(){
 		var svg = $("<svg></svg>");
-		svg.attr({
-			xmlns:"http://www.w3.org/2000/svg",
-			width:this.width,
-			height:this.height,
-			viewBox:this.viewBox,
-			preserveAspectRatio:this.preserveAspectRatio,
-			id:this.id
-		});
+
+		if(!this.isHide){
+			svg.attr({
+				xmlns:"http://www.w3.org/2000/svg",
+				version:"1.1",
+				width:this.width,
+				height:this.height,
+				viewBox:this.viewBox,
+				preserveAspectRatio:this.preserveAspectRatio,
+				id:this.id
+			});
+		}else{
+			svg.attr({
+				xmlns: "http://www.w3.org/2000/svg",
+				version: "1.1"
+			});
+		}
+
 
 		this.body.html(svg.prop("outerHTML"));
 
