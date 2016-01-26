@@ -8,16 +8,21 @@
 
 
 //@param:str   要创建粘贴的class名字
-//svg.createStickEffectClass(class_name)
+//svg.createStickEffectClass({
+//	className:"aaa"
+// 	stickNumber:7       //默认7效果比较好
+//})
 
 
 
 (function(){
 
-	var stickEffect = function(className){
-		var __id__ = "svg"+new Date().getTime()+"_"+parseInt(Math.random()*100),
+	var stickEffect = function(opt){
+		var __id__ = "svg_stick_"+new Date().getTime()+"_"+parseInt(Math.random()*100),
 			div,
-			a;
+			a,
+			className = opt.className || "",
+			stickNumber = opt.stickNumber || 7;
 
 		var createDiv = function(){
 			div = $("<div></div>");
@@ -59,7 +64,7 @@
 				attr:{
 					in:"blur",
 					mode:"matrix",
-					values:"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7",
+					values:"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -"+stickNumber,
 					result:"goo"
 				}
 			});
