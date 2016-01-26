@@ -55,7 +55,6 @@ var create_stick_effect_class_test = function(div_id){
 };
 
 
-
 var create_blur_effect_class_test = function(div_id){
 	var dom = $("<div></div>"),
 		body = $("#"+div_id);
@@ -67,6 +66,24 @@ var create_blur_effect_class_test = function(div_id){
 	svg.createBlurEffectClass({
 		className:div_id,
 		blurNumber:10
+	});
+	dom.addClass(div_id);
+
+};
+
+
+
+var create_gray_effect_class_test = function(div_id){
+	var dom = $("<div></div>"),
+		body = $("#"+div_id);
+
+	dom.css({
+		width:"30px",height:"30px",background:"red","border-radius":"30px"
+	});
+	body.append(dom);
+	svg.createGrayEffectClass({
+		className:div_id,
+		grayNumber:0.5
 	});
 	dom.addClass(div_id);
 

@@ -4,22 +4,22 @@
 
 
 
-//创建模糊的效果class
 
-//svg.createBlurEffectClass({
-//	className:"aaa"		//@param:str      要创建模糊效果的class名字
-// 	blurNumber:10       //@paran:number   模糊的属性数字 默认10
+//svg.createGrayEffectClass({
+//	className:"aaa"		//@param:str      要创建去色彩效果的class名字
+// 	grayNumber:0.5      //@param:number   0-1 越小越黑 越大越灰
 //})
+
 
 
 (function(){
 
-	var blurEffect = function(opt){
-		var __id__ = "svg_blur_"+new Date().getTime()+"_"+parseInt(Math.random()*100),
+	var grayEffect = function(opt){
+		var __id__ = "svg_gray_"+new Date().getTime()+"_"+parseInt(Math.random()*100),
 			div,
 			a,
 			className = opt.className || "",
-			blurNumber = opt.blurNumber || 10;
+			grayNumber = opt.grayNumber || 0.5;
 
 		var createDiv = function(){
 			div = $("<div></div>");
@@ -47,18 +47,19 @@
 				}
 			});
 
-			var feGaussianBlur = a.createElement({
-				tag:"feGaussianBlur",
+			var feColorMatrix = a.createElement({
+				tag:"feColorMatrix",
 				attr:{
-					in:"SourceGraphic",
-					result:"blur",
-					stdDeviation:blurNumber
+					in:"blur",
+					mode:"matrix",
+					values:grayNumber+" "+grayNumber+" "+grayNumber+" 0 0  "+grayNumber+" "+grayNumber+" "+grayNumber+" 0 0  "+grayNumber+" "+grayNumber+" "+grayNumber+" 0 0  0 0 0 1 0",
+					result:"goo"
 				}
 			});
 
 
 			$(defs).append(filter);
-			$(filter).append(feGaussianBlur);
+			$(filter).append(feColorMatrix);
 			a.svg.append(defs);
 		};
 
@@ -74,6 +75,6 @@
 		createClass();
 	};
 
-	return svg.createBlurEffectClass = blurEffect;
+	return svg.createGrayEffectClass = grayEffect;
 
 })();

@@ -7,10 +7,10 @@
 //元素之间必须有包含关系，否则不生效(必须父元素也设置该class)
 
 
-//@param:str   要创建粘贴的class名字
+
 //svg.createStickEffectClass({
-//	className:"aaa"
-// 	stickNumber:7       //默认7效果比较好
+//	className:"aaa"		//@param:str      要创建粘贴的class名字
+// 	stickNumber:7       //@paran:number   默认7效果比较好
 //})
 
 
