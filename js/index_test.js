@@ -88,3 +88,12 @@ var create_gray_effect_class_test = function(div_id){
 	dom.addClass(div_id);
 
 };
+
+
+
+var ios_app_install_effect_test = function(div_id){
+	var a = new svg.ios_app_install_effect({
+		body:$("#"+div_id)           //需要放入的容器  @param:jqobj
+	});
+	a.progress(30);              //显示进度 @param:number 1-100
+};

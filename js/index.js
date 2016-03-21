@@ -54,6 +54,7 @@ $(document).ready(function(){
 		background:"#eee",
 		display:"block"
 	});
+	$("body").append("<br/><br/>");
 	$("body").append(a);
 	__a__ = a;
 
