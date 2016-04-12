@@ -97,3 +97,15 @@ var ios_app_install_effect_test = function(div_id){
 	});
 	a.progress(30);              //显示进度 @param:number 1-100
 };
+
+
+var loading_test = function(div_id){
+	b = new svg.loading({
+		dom:$("#"+div_id),
+		r1:25,
+		r2:20,
+		startDeg:90,
+		bgColor:"#f00"
+	});
+	b.progress(60);
+};
