@@ -15,7 +15,7 @@
 
 
 svg.menu_arrow = function(opt){
-	var a = new svg({
+	var a = new svgObj({
 		container:opt.container,
 		id:opt.id || "",
 		viewBoxWidth:"18",

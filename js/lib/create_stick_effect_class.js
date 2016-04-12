@@ -33,7 +33,7 @@
 		};
 
 		var createSVG = function(){
-			a = new svg({
+			a = new svgObj({
 				container:div,
 				isHide:true,
 				id:""

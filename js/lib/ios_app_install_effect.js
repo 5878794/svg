@@ -40,7 +40,7 @@ svg.ios_app_install_effect = (function(){
             this.createInCircle();
         },
         createSvg:function(){
-            this.svg = new svg({
+            this.svg = new svgObj({
                 container:this.body,
                 id:"",
                 viewBoxWidth:this.body_width,

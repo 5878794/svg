@@ -27,8 +27,10 @@
 //	}
 //});
 
+var svg = {};
 
-var svg = function(opt){
+
+var svgObj = function(opt){
 	//容器
 	this.body = opt.container;
 	this.id = opt.id || "";
@@ -58,7 +60,7 @@ var svg = function(opt){
 
 	this.init();
 };
-svg.prototype = {
+svgObj.prototype = {
 	init:function(){
 		this.createBody();
 	},

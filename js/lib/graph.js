@@ -67,7 +67,7 @@ svg.Graph = (function(){
             this.cellHeight = parseInt(this.domHeight/(this.yPointNumber+1));
         },
         createSVG:function(){
-            this.svg = new svg({
+            this.svg = new svgObj({
                 container:this.dom,
                 id:"__test__",
                 viewBoxWidth:this.domWidth,
