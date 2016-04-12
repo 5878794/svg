@@ -101,7 +101,6 @@ svg.prototype = {
 			}
 		}
 		$(el).val(val);
-
 		return el;
 	}
 };
