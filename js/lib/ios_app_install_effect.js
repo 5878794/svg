@@ -103,8 +103,8 @@ svg.ios_app_install_effect = (function(){
             val = 360 - 360 * val / 100;
             val = (val == 360)? 359.999 : val;
             var d = this.getPath(val);
-            console.log(d);
-            console.log(this.yuan)
+            //console.log(d);
+            //console.log(this.yuan)
             $(this.yuan).attr({
                 d:d
             })

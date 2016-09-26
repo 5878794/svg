@@ -12,6 +12,13 @@ var menu_arrow_test = function(div_id){
 };
 
 
+var menu_close_test = function(div_id){
+	svg.menu_close({
+		//id:"",					//@param:str    	svg容器的id
+		container:$("#"+div_id)		//@param:jqobj  	要插入的容器dom
+	})
+};
+
 var create_stick_effect_class_test = function(div_id){
 	//demo
 	var dom = $("#"+div_id),
