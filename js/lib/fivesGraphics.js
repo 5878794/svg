@@ -140,7 +140,7 @@
                 d += "L "+point.x+","+point.y+" ";
             }
 
-            d = "M " + d.substr(1) + "L "+this.fivePoints[0].x+","+this.fivePoints[0].y;
+            d = "M " + d.substr(1) + "Z";
 
             var bg = this.svg.createElement({
                 tag:"path",
@@ -171,22 +171,17 @@
         },
         //画数据的显示层
         createDataLayer:function(){
-            var first_point = {},
-                d = "";
+            var d = "";
 
 
             for(var i= 0,l=this.value.length;i<l;i++){
                 var this_val = parseInt(this.value[i]),
                     this_point = this.getPointXY(this_val,i);
 
-                if(i == 0){
-                    first_point = this_point;
-                }
-
                 d += "L "+this_point.x+","+this_point.y+" ";
             }
 
-            d = "M" + d.substr(1) + "L " + first_point.x+","+first_point.y;
+            d = "M" + d.substr(1) + "Z";
 
             var graphics = this.svg.createElement({
                 tag:"path",
