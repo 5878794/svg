@@ -67,7 +67,6 @@ svg.menu_close = function(opt){
 
     a.svg.append(l1).append(l2).append(l3);
 
-
     var animate = null,
         line1 = $("#__l1"),
         line2 = $("#__l2"),
@@ -109,10 +108,9 @@ svg.menu_close = function(opt){
         };
 
 
-    var isShow = false;
+
     a.svg.click(function(){
-        isShow = (isShow)? false : true;
-        //console.log(isShow);
+
         //callback??
         animate.play();
     });

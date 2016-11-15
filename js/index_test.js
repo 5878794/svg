@@ -116,3 +116,19 @@ var loading_test = function(div_id){
 	});
 	b.progress(60);
 };
+
+
+var fivesGraphics_test = function(div_id){
+	new svg.fivesGraphics({
+		body:$("#"+div_id),                      //要放置的容器  jqobj
+		value:[60,70,80,50,40],               //5个项目的得分,百分比
+		unit:"",                            //图形中间总分数的单位
+		title:"",                     //图形中间的标题(第2行)
+		fontSize:"",                      //通用字体大小，传入带单位
+		totalFontSize:"",                 //得分字体大小
+		bgColor:"#ccc",                       //背景颜色
+		bgLineColor:"#fff",                   //背景线颜色
+		color:"rgba(0,0,0,0.5)",              //数据填充色
+		totalFontColor:""                 //中间部分统计颜色
+	})
+};
