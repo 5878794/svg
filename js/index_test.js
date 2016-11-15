@@ -132,3 +132,17 @@ var fivesGraphics_test = function(div_id){
 		totalFontColor:""                 //中间部分统计颜色
 	})
 };
+
+
+var speedometer_test = function(div_id){
+	var a = new svg.speedometer({
+		body:$("#"+div_id),                  //要插入的dom
+		startDeg:30,                    //开始角度（缺口在底部）
+		endDeg:330,                     //结束角度
+		jgDeg:10,                        //间隔的角度
+		lineColor:"#000",               //线条颜色
+		selectLineColor:"#f00",         //有数据显示的颜色
+		lineLength:7                   //线条的长度
+	});
+	a.coloring(30);
+};
