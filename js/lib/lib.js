@@ -334,3 +334,17 @@ var JsAnimate = (function(){
 
     return animate;
 })();
+
+
+(function(){
+    var radian = 2*Math.PI/360,
+        sin = function(deg){
+            return Math.sin(deg*radian);
+        },
+        cos = function(deg){
+            return Math.cos(deg*radian);
+        };
+
+    window.sin = sin;
+    window.cos = cos;
+})();
