@@ -62,6 +62,11 @@ var create_stick_effect_class_test = function(div_id){
 };
 
 
+var graph_test = function(){
+
+};
+
+
 var create_blur_effect_class_test = function(div_id){
 	var dom = $("<div></div>"),
 		body = $("#"+div_id);
