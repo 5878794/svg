@@ -146,3 +146,14 @@ var speedometer_test = function(div_id){
 	});
 	a.coloring(30);
 };
+
+
+
+var circularGraph_test = function(div_id){
+	new svg.circularGraph({
+		body:$("#"+div_id),                    //要插入的dom元素   jqobj
+		value:[70,20,30],                   //数据
+		color:["#e9a","#f00","#a3a"],       //颜色
+		lineWidth:10                        //圆环边框大小
+	});
+};
