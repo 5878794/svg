@@ -229,6 +229,7 @@ svg.histogram.prototype = {
     //创建y轴
     createY:function(){
         var jg = (this.bodyHeight - this.xAxisHeight)/(this.showTextY.length-1),
+            //修正文字高度引起的不等分，对齐的修正值。
             xz = this.fontSize/(this.showTextY.length-1);
 
         for(var i = this.showTextY.length-1;i>=0;i--){
