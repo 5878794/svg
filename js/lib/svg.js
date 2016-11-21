@@ -102,7 +102,7 @@ svgObj.prototype = {
 				el.setAttribute(k, attr[k]);
 			}
 		}
-		$(el).val(val);
+		$(el).text(val);
 		return el;
 	}
 };

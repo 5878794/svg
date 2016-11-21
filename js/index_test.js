@@ -127,10 +127,10 @@ var fivesGraphics_test = function(div_id){
 	new svg.fivesGraphics({
 		body:$("#"+div_id),                      //要放置的容器  jqobj
 		value:[60,70,80,50,40],               //5个项目的得分,百分比
-		unit:"",                            //图形中间总分数的单位
-		title:"",                     //图形中间的标题(第2行)
+		unit:"分",                            //图形中间总分数的单位
+		title:"标题",                     //图形中间的标题(第2行)
 		fontSize:"",                      //通用字体大小，传入带单位
-		totalFontSize:"",                 //得分字体大小
+		totalFontSize:"12px",                 //得分字体大小
 		bgColor:"#ccc",                       //背景颜色
 		bgLineColor:"#fff",                   //背景线颜色
 		color:"rgba(0,0,0,0.5)",              //数据填充色
@@ -160,5 +160,29 @@ var circularGraph_test = function(div_id){
 		value:[70,20,30],                   //数据
 		color:["#e9a","#f00","#a3a"],       //颜色
 		lineWidth:10                        //圆环边框大小
+	});
+};
+
+
+
+var histogram_test = function(div_id){
+	bb = new svg.histogram({
+		body:$("#"+div_id),      //@param:jqobj   容器
+		maxYNumber:"",        //@param:number  y轴显示最大值  默认数据中的最大值
+		minYNumber:"",        //@param:number  y轴显示最小值  默认0
+		showYTextNumber:2,   //@param:number  y轴显示几个刻度
+		showXTextNumber:"",   //@param:number  x轴显示几个刻度
+		YUnit:"",             //@param:string  y轴单位
+		fontColor:"",         //@param:string  字体颜色
+		graphColor:"",        //@param:string  图形颜色
+		lineWidth:"",         //@param:number  柱状图线条的宽度
+		fontSize:9,          //@param:number  x，y轴文字大小
+		xAxisHeight:5,       //@param:number  x轴文本高度
+		yAxisWidth:5,        //@param:number  y轴文本宽度
+		value:[               //@param:array   要显示的数据
+			{"10-1":"11"},            //数据格式  key为x轴显示的文字，value为值
+			{"10-2":"22"},
+			{"10-3":"33"}
+		]
 	});
 };
