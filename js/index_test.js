@@ -62,8 +62,18 @@ var create_stick_effect_class_test = function(div_id){
 };
 
 
-var graph_test = function(){
-
+var graph_test = function(div_id){
+	new svg.Graph({
+		dom:$("#"+div_id),      // @param:jqobj 要插入的dom
+	//x轴要显示的坐标
+		x:["3-1","3-2","3-5","3-8","3-9","3-10","3-11","3-12","3-13","3-14","3-15","3-20","3-25","3-28","3-29","3-30"],
+		//y轴要显示的坐标
+		y:["4","5","6","7","9","11","13","15","18"],
+		//要显示的值  为空会跳过该点连接到下一点
+		val:[5.5,3,6,7,24,"",4,6,16,"",6.8,5.8,12.8,14.9],
+		//横向一个单元格显示几个数据点  注意：xNumber*x.length = val.length 否则后面会空
+		xNumber:3
+	})
 };
 
 
@@ -177,7 +187,7 @@ var histogram_test = function(div_id){
 		graphColor:"",        //@param:string  图形颜色
 		lineWidth:"",         //@param:number  柱状图线条的宽度
 		fontSize:9,          //@param:number  x，y轴文字大小
-		xAxisHeight:5,       //@param:number  x轴文本高度
+		xAxisHeight:20,       //@param:number  x轴文本高度
 		yAxisWidth:5,        //@param:number  y轴文本宽度
 		value:[               //@param:array   要显示的数据
 			{"10-1":"11"},            //数据格式  key为x轴显示的文字，value为值
