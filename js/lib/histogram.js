@@ -13,10 +13,12 @@
 //    YUnit:"",             //@param:string  y轴单位
 //    fontColor:"",         //@param:string  字体颜色
 //    graphColor:"",        //@param:string  图形颜色
+//    graphNoDataColor:""   //@param:string  图形数据为0时的颜色
 //    lineWidth:"",         //@param:number  柱状图线条的宽度
 //    fontSize:"",          //@param:number  x，y轴文字大小  px
 //    xAxisHeight:"",       //@param:number  x轴文本高度
 //    yAxisWidth:"",        //@param:number  y轴文本宽度
+//    rightPadding:"",      //@param:number  右侧留白区域
 //    value:[               //@param:array   要显示的数据
 //          {"10-1":11},            //数据格式  key为x轴显示的文字，value为值
 //          {"10-2":22},
@@ -50,6 +52,7 @@ svg.histogram = function(opt){
     this.fontSize = parseInt(opt.fontSize) || 16;             //x，y轴文字大小
     this.xAxisHeight = parseInt(opt.xAxisHeight) || 50;       //x轴文本高度
     this.yAxisWidth = parseInt(opt.yAxisWidth) || 30;         //y轴文本宽度
+    this.rightPadding = parseInt(opt.rightPadding) || 10;     //右侧留白
 
     this.svg = null;
     this.bodyWidth = 0;
@@ -166,7 +169,7 @@ svg.histogram.prototype = {
     },
     //创建图表
     createChart:function(){
-        var width = this.bodyWidth - this.yAxisWidth,
+        var width = this.bodyWidth - this.yAxisWidth - this.rightPadding,
             height = this.bodyHeight - this.xAxisHeight,
             length = this.value.length,
             itemWidth = width/ length,
