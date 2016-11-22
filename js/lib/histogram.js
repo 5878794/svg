@@ -45,6 +45,7 @@ svg.histogram = function(opt){
     this.value = opt.value || [];               //要显示的数据  [{"10-1":1,"10-2":2}]
     this.fontColor = opt.fontColor || "#000";   //字体颜色
     this.graphColor = opt.graphColor || "#b8b8f0"; //图形颜色
+    this.graphNoDataColor = opt.graphNoDataColor || "#ccc";  //图形数据为0时的颜色
     this.lineWidth = parseInt(opt.lineWidth) || 11;           //柱状图线条的宽度
     this.fontSize = parseInt(opt.fontSize) || 16;             //x，y轴文字大小
     this.xAxisHeight = parseInt(opt.xAxisHeight) || 50;       //x轴文本高度
@@ -178,7 +179,8 @@ svg.histogram.prototype = {
                 name_x = x,
                 _this_val = this.value[i],
                 _val = 0,
-                name = "";
+                name = "",
+                color = this.graphColor;
 
             for(var key in _this_val){
                 if(_this_val.hasOwnProperty(key)){
@@ -187,7 +189,17 @@ svg.histogram.prototype = {
                 }
             }
 
+
             var _height = (_val/this.maxVal)*height;
+
+
+            //数据为空或0时
+            if(!_val || _val == 0){
+                color = this.graphNoDataColor;
+                _height = this.lineWidth;
+            }
+
+
 
 
             var line = this.svg.createElement({
@@ -199,7 +211,7 @@ svg.histogram.prototype = {
                     ry:lineWidth,
                     width:lineWidth,
                     height:_height,
-                    fill:this.graphColor
+                    fill:color
                 }
             });
 
